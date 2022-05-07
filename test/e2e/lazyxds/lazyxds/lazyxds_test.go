@@ -18,12 +18,13 @@ package lazyxds_test
 
 import (
 	"fmt"
-	"github.com/aeraki-mesh/aeraki/test/e2e/lazyxds/utils"
+	"log"
+	"time"
+
+	"github.com/aeraki-mesh/lazyxds/test/e2e/lazyxds/utils"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
-	"log"
-	"time"
 )
 
 const (
