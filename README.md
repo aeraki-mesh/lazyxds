@@ -59,8 +59,8 @@ make docker-build-e2e.lazyxds
 ### Install Lazyxds Egress and Controller
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/aeraki-mesh/aeraki/master/lazyxds/install/lazyxds-egress.yaml
-kubectl apply -f https://raw.githubusercontent.com/aeraki-mesh/aeraki/master/lazyxds/install/lazyxds-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/aeraki-mesh/lazyxds/master/install/lazyxds-egress.yaml
+kubectl apply -f https://raw.githubusercontent.com/aeraki-mesh/lazyxds/master/install/lazyxds-controller.yaml
 ```
 
 The above commands install the lazyxds egress and controller into the istio-system namespace.
@@ -109,7 +109,7 @@ or use kubectl:
     istioctl install -y --set meshConfig.accessLogFile=/dev/stdout
     ```
 
-2. Install lazyXds by following the instructions in [Install Lazyxds egress and controller](https://github.com/aeraki-mesh/aeraki/blob/master/lazyxds/README.md#install-lazyxds-egress-and-controller).
+2. Install lazyXds by following the instructions in [Install Lazyxds egress and controller](https://github.com/aeraki-mesh/lazyxds/blob/master/README.md#install-lazyxds-egress-and-controller).
 
 3. Install bookinfo application:
 
