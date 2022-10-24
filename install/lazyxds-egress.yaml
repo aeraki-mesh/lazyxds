@@ -177,7 +177,7 @@ spec:
             - name: ISTIO_BOOTSTRAP_OVERRIDE
               value: /etc/istio/custom-bootstrap/custom_bootstrap.json
             - name: JWT_POLICY
-              value: first-party-jwt
+              value: third-party-jwt
             - name: PILOT_CERT_PROVIDER
               value: istiod
             - name: CA_ADDR
@@ -254,6 +254,9 @@ spec:
               name: gatewaysdsudspath
             - mountPath: /var/lib/istio/data
               name: istio-data
+            - mountPath: /var/run/secrets/tokens
+              name: istio-token
+              readOnly: true
             - mountPath: /etc/istio/pod
               name: podinfo
             - mountPath: /etc/istio/egressgateway-certs
@@ -290,6 +293,14 @@ spec:
           name: gatewaysdsudspath
         - emptyDir: {}
           name: istio-data
+        - name: istio-token
+          projected:
+            defaultMode: 420
+            sources:
+            - serviceAccountToken:
+                audience: istio-ca
+                expirationSeconds: 43200
+                path: istio-token
         - configMap:
             defaultMode: 420
             name: istio-1-8-1
