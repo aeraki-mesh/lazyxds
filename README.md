@@ -18,6 +18,8 @@
 
 LazyXds enables Istio only push needed xDS to sidecars to reduce resource consumption and speed up xDS configuration propagation.
 
+Note: LazyXds is an experimental project, please don't use it in production.
+
 ## Problems to solve
 
 ![SotW xDS](docs/images/sotw-xds.png)
